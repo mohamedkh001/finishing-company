@@ -54,7 +54,7 @@
                             <field name="supervisor_id"/>
                         </group>
                     </group>
-
+                    <group string="Budget &amp; Profitability">
                         <group>
                             <field name="estimated_material_cost"/>
                             <field name="estimated_labor_cost"/>
