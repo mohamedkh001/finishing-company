@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="ifm_root_menu" name="Interior Finishing" sequence="10"/>
+    <menuitem id="ifm_dashboard_menu" name="Dashboards" parent="ifm_root_menu" sequence="1"/>
+    <menuitem id="ifm_projects_menu" name="Projects" parent="ifm_root_menu" sequence="2"/>
+    <menuitem id="ifm_operations_menu" name="Operations" parent="ifm_root_menu" sequence="3"/>
+    <menuitem id="ifm_finance_menu" name="Finance" parent="ifm_root_menu" sequence="4"/>
+    <menuitem id="ifm_documents_menu" name="Documents" parent="ifm_root_menu" sequence="5"/>
+    <menuitem id="ifm_configuration_menu" name="Configuration" parent="ifm_root_menu" sequence="99" groups="interior_finishing_management.group_ifm_general_manager"/>
+</odoo>
