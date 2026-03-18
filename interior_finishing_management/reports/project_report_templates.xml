@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_ifm_project">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page" t-att-dir="'rtl' if o.env.lang and o.env.lang.startswith('ar') else 'ltr'">
+                        <h2><t t-esc="o.name"/></h2>
+                        <p><strong>Client:</strong> <t t-esc="o.partner_id.name"/></p>
+                        <p><strong>Location:</strong> <t t-esc="o.address"/></p>
+                        <p><strong>Progress:</strong> <t t-esc="o.progress_percent"/>%</p>
+                        <p><strong>Total Expenses:</strong> <t t-esc="formatLang(o.total_expenses, currency_obj=o.currency_id)"/></p>
+                        <p><strong>Client Payments:</strong> <t t-esc="formatLang(o.total_client_payments, currency_obj=o.currency_id)"/></p>
+                        <p><strong>Profit/Loss:</strong> <t t-esc="formatLang(o.profit_amount, currency_obj=o.currency_id)"/></p>
+                        <h3>Cost Breakdown</h3>
+                        <ul>
+                            <li>Material: <t t-esc="formatLang(o.material_cost, currency_obj=o.currency_id)"/></li>
+                            <li>Labor: <t t-esc="formatLang(o.labor_cost, currency_obj=o.currency_id)"/></li>
+                        </ul>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
