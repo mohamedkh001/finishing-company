@@ -4,13 +4,13 @@
         <field name="name">ifm.procurement.request.tree</field>
         <field name="model">ifm.procurement.request</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name"/>
                 <field name="project_id"/>
                 <field name="requester_id"/>
                 <field name="state"/>
                 <field name="purchase_order_id"/>
-            </tree>
+            </list>
         </field>
     </record>
     <record id="view_ifm_procurement_request_form" model="ir.ui.view">
@@ -33,13 +33,13 @@
                         <field name="purchase_order_id" readonly="1"/>
                     </group>
                     <field name="line_ids">
-                        <tree editable="bottom">
+                        <list editable="bottom">
                             <field name="name"/>
                             <field name="product_id"/>
                             <field name="quantity"/>
                             <field name="unit_price"/>
                             <field name="supplier_id"/>
-                        </tree>
+                        </list>
                     </field>
                 </sheet>
                 <chatter/>
@@ -51,24 +51,24 @@
         <field name="name">ifm.supplier.tree</field>
         <field name="model">ifm.supplier</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name"/>
                 <field name="partner_id"/>
                 <field name="phone"/>
                 <field name="rating"/>
-            </tree>
+            </list>
         </field>
     </record>
 
     <record id="action_ifm_procurement_request" model="ir.actions.act_window">
         <field name="name">Purchase Requests</field>
         <field name="res_model">ifm.procurement.request</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
     <record id="action_ifm_supplier" model="ir.actions.act_window">
         <field name="name">Suppliers</field>
         <field name="res_model">ifm.supplier</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem id="ifm_procurement_request_menu" name="Purchase Requests" parent="ifm_operations_menu" action="action_ifm_procurement_request"/>

@@ -4,12 +4,12 @@
         <field name="name">ifm.document.tree</field>
         <field name="model">ifm.document</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name"/>
                 <field name="project_id"/>
                 <field name="room"/>
                 <field name="attachment_name"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -34,7 +34,7 @@
     <record id="action_ifm_document" model="ir.actions.act_window">
         <field name="name">Project Documents</field>
         <field name="res_model">ifm.document</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem id="ifm_document_menu" name="Project Documents" parent="ifm_documents_menu" action="action_ifm_document"/>

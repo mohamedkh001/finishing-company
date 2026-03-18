@@ -4,14 +4,14 @@
         <field name="name">ifm.task.default.tree</field>
         <field name="model">ifm.task</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name"/>
                 <field name="project_id"/>
                 <field name="assigned_employee_id"/>
                 <field name="deadline"/>
                 <field name="completion_percent" widget="progressbar"/>
                 <field name="state"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -42,7 +42,7 @@
         <field name="name">ifm.engineer.profile.tree</field>
         <field name="model">ifm.engineer.profile</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="employee_id"/>
                 <field name="assigned_task_count"/>
                 <field name="completed_task_count"/>
@@ -50,7 +50,7 @@
                 <field name="present_days"/>
                 <field name="absent_days"/>
                 <field name="performance_score"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -80,7 +80,7 @@
     <record id="action_ifm_engineer_profile" model="ir.actions.act_window">
         <field name="name">Engineer Performance</field>
         <field name="res_model">ifm.engineer.profile</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem id="ifm_engineer_profile_menu" name="Engineers" parent="ifm_projects_menu" action="action_ifm_engineer_profile" sequence="3"/>
