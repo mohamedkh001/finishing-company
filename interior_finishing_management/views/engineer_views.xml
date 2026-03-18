@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_ifm_task_tree" model="ir.ui.view">
+        <field name="name">ifm.task.default.tree</field>
+        <field name="model">ifm.task</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="project_id"/>
+                <field name="assigned_employee_id"/>
+                <field name="deadline"/>
+                <field name="completion_percent" widget="progressbar"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_ifm_task_form" model="ir.ui.view">
+        <field name="name">ifm.task.form</field>
+        <field name="model">ifm.task</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_mark_done" type="object" string="Mark Done" class="btn-primary" invisible="state == 'done'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="pending,in_progress,done,delayed"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="project_id"/>
+                        <field name="assigned_employee_id"/>
+                        <field name="deadline"/>
+                        <field name="completion_percent"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_ifm_engineer_profile_tree" model="ir.ui.view">
+        <field name="name">ifm.engineer.profile.tree</field>
+        <field name="model">ifm.engineer.profile</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id"/>
+                <field name="assigned_task_count"/>
+                <field name="completed_task_count"/>
+                <field name="pending_task_count"/>
+                <field name="present_days"/>
+                <field name="absent_days"/>
+                <field name="performance_score"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_ifm_engineer_profile_form" model="ir.ui.view">
+        <field name="name">ifm.engineer.profile.form</field>
+        <field name="model">ifm.engineer.profile</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="employee_id"/>
+                        <field name="present_days"/>
+                        <field name="absent_days"/>
+                    </group>
+                    <group string="KPIs">
+                        <field name="assigned_task_count" readonly="1"/>
+                        <field name="completed_task_count" readonly="1"/>
+                        <field name="pending_task_count" readonly="1"/>
+                        <field name="workload_percent" readonly="1"/>
+                        <field name="performance_score" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ifm_engineer_profile" model="ir.actions.act_window">
+        <field name="name">Engineer Performance</field>
+        <field name="res_model">ifm.engineer.profile</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="ifm_engineer_profile_menu" name="Engineers" parent="ifm_projects_menu" action="action_ifm_engineer_profile" sequence="3"/>
+</odoo>

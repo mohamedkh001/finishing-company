@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_ifm_executive_dashboard" model="ir.actions.client">
+        <field name="name">Executive Dashboard</field>
+        <field name="tag">ifm_executive_dashboard</field>
+    </record>
+
+    <record id="action_ifm_engineer_dashboard" model="ir.actions.client">
+        <field name="name">Engineer Dashboard</field>
+        <field name="tag">ifm_engineer_dashboard</field>
+    </record>
+
+    <menuitem id="ifm_executive_dashboard_menu" name="Executive" parent="ifm_dashboard_menu" action="action_ifm_executive_dashboard" sequence="1"/>
+    <menuitem id="ifm_engineer_dashboard_menu" name="Engineer" parent="ifm_dashboard_menu" action="action_ifm_engineer_dashboard" sequence="2"/>
+</odoo>
