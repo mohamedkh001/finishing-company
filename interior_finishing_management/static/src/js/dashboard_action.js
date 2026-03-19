@@ -14,12 +14,25 @@ class IFMDashboard extends Component {
         });
     }
 
+    _getMode() {
+        const tag = this.props.action?.tag;
+        if (tag === "ifm_project_dashboard") {
+            return "project";
+        }
+        if (tag === "ifm_engineer_dashboard") {
+            return "engineer";
+        }
+        return "executive";
+    }
+
     async loadData() {
-        const mode = this.props.mode;
+        const mode = this._getMode();
         if (mode === "executive") {
             this.state.data = await rpc("/ifm/dashboard/executive", {});
         } else if (mode === "project") {
-            this.state.data = await rpc("/ifm/dashboard/project", { project_id: this.props.projectId });
+            this.state.data = await rpc("/ifm/dashboard/project", {
+                project_id: this.props.action?.params?.project_id,
+            });
         } else {
             this.state.data = await rpc("/ifm/dashboard/engineer", {});
         }
@@ -40,7 +53,8 @@ class IFMDashboard extends Component {
             }
         };
 
-        if (this.props.mode === "executive") {
+        const mode = this._getMode();
+        if (mode === "executive") {
             make("progressChart", {
                 type: "doughnut",
                 data: {
@@ -80,7 +94,7 @@ class IFMDashboard extends Component {
                 },
                 options: defaults,
             });
-        } else if (this.props.mode === "project") {
+        } else if (mode === "project") {
             make("estimatedActualChart", {
                 type: "bar",
                 data: {
@@ -135,17 +149,6 @@ class IFMDashboard extends Component {
 
 IFMDashboard.template = "ifm.Dashboard";
 
-registry.category("actions").add("ifm_executive_dashboard", {
-    Component: IFMDashboard,
-    props: { mode: "executive" },
-});
-
-registry.category("actions").add("ifm_engineer_dashboard", {
-    Component: IFMDashboard,
-    props: { mode: "engineer" },
-});
-
-registry.category("actions").add("ifm_project_dashboard", {
-    Component: IFMDashboard,
-    props: (env) => ({ mode: "project", projectId: env.config.action.params.project_id }),
-});
+registry.category("actions").add("ifm_executive_dashboard", IFMDashboard);
+registry.category("actions").add("ifm_engineer_dashboard", IFMDashboard);
+registry.category("actions").add("ifm_project_dashboard", IFMDashboard);
