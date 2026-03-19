@@ -1,0 +1,14 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: interior_finishing_management 18.0\n"
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Interior Finishing"
+msgstr "Interior Finishing"
+
+msgid "Project Dashboard"
+msgstr "Project Dashboard"
+
+msgid "Task Delayed"
+msgstr "Task Delayed"

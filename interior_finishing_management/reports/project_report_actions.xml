@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_ifm_project" model="ir.actions.report">
+        <field name="name">Project Summary</field>
+        <field name="model">ifm.project</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">interior_finishing_management.report_ifm_project</field>
+        <field name="report_file">interior_finishing_management.report_ifm_project</field>
+        <field name="print_report_name">'Project Report - %s' % (object.name)</field>
+    </record>
+</odoo>
