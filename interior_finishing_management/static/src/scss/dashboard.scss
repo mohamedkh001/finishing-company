@@ -1,0 +1,36 @@
+.ifm_dashboard {
+    padding: 16px;
+
+    .ifm_kpi_grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .ifm_kpi_card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .ifm_chart_grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        gap: 12px;
+    }
+
+    .ifm_chart_card {
+        min-height: 280px;
+        background: #fff;
+        border-radius: 10px;
+        padding: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+}
+
+html[dir="rtl"] .ifm_dashboard {
+    direction: rtl;
+    text-align: right;
+}

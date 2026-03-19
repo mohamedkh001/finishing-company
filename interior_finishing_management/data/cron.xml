@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="seq_ifm_project" model="ir.sequence">
+        <field name="name">IFM Project</field>
+        <field name="code">ifm.project</field>
+        <field name="prefix">PRJ/%(year)s/</field>
+        <field name="padding">4</field>
+    </record>
+
+    <record id="seq_ifm_procurement_request" model="ir.sequence">
+        <field name="name">IFM Procurement Request</field>
+        <field name="code">ifm.procurement.request</field>
+        <field name="prefix">PR/%(year)s/</field>
+        <field name="padding">4</field>
+    </record>
+
+    <record id="ir_cron_ifm_delayed_tasks" model="ir.cron">
+        <field name="name">IFM - Mark Delayed Tasks</field>
+        <field name="model_id" ref="model_ifm_task"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_mark_delayed_tasks()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="ir_cron_ifm_delayed_payments" model="ir.cron">
+        <field name="name">IFM - Mark Delayed Payments</field>
+        <field name="model_id" ref="model_ifm_payment"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_mark_delayed_payments()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="active">True</field>
+    </record>
+</odoo>
