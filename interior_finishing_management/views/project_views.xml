@@ -135,23 +135,7 @@
         </field>
     </record>
 
-    <record id="view_ifm_project_search" model="ir.ui.view">
-        <field name="name">ifm.project.search</field>
-        <field name="model">ifm.project</field>
-        <field name="arch" type="xml">
-            <search>
-                <field name="name"/>
-                <field name="partner_id"/>
-                <field name="unit_type"/>
-                <filter name="filter_active" string="Active" domain="[('state','=','active')]"/>
-                <filter name="filter_done" string="Done" domain="[('state','=','done')]"/>
-                <group expand="1" string="Group By">
-                    <filter string="Unit Type" context="{'group_by':'unit_type'}"/>
-                    <filter string="Engineer" context="{'group_by':'engineer_id'}"/>
-                </group>
-            </search>
-        </field>
-    </record>
+    
 
     <menuitem id="ifm_project_menu" name="Projects" parent="ifm_projects_menu" action="action_ifm_project" sequence="1"/>
     <menuitem id="ifm_task_menu" name="Tasks" parent="ifm_projects_menu" action="action_ifm_task" sequence="2"/>
