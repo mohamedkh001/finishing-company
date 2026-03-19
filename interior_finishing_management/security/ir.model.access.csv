@@ -1,0 +1,19 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ifm_project_manager,ifm.project manager,model_ifm_project,interior_finishing_management.group_ifm_general_manager,1,1,1,1
+access_ifm_project_user,ifm.project user,model_ifm_project,base.group_user,1,1,1,0
+access_ifm_task_manager,ifm.task manager,model_ifm_task,interior_finishing_management.group_ifm_general_manager,1,1,1,1
+access_ifm_task_engineer,ifm.task engineer,model_ifm_task,interior_finishing_management.group_ifm_engineer,1,1,1,0
+access_ifm_engineer_profile_manager,ifm.engineer.profile manager,model_ifm_engineer_profile,interior_finishing_management.group_ifm_general_manager,1,1,1,1
+access_ifm_engineer_profile_supervisor,ifm.engineer.profile supervisor,model_ifm_engineer_profile,interior_finishing_management.group_ifm_supervisor,1,1,1,0
+access_ifm_expense_accountant,ifm.expense accountant,model_ifm_expense,interior_finishing_management.group_ifm_accountant,1,1,1,1
+access_ifm_payment_accountant,ifm.payment accountant,model_ifm_payment,interior_finishing_management.group_ifm_accountant,1,1,1,1
+access_ifm_contract_manager,ifm.contract manager,model_ifm_contract,interior_finishing_management.group_ifm_general_manager,1,1,1,1
+access_ifm_boq_manager,ifm.boq.line manager,model_ifm_boq_line,interior_finishing_management.group_ifm_workshop_manager,1,1,1,1
+access_ifm_boq_user,ifm.boq.line user,model_ifm_boq_line,base.group_user,1,0,0,0
+access_ifm_procurement_manager,ifm.procurement.request manager,model_ifm_procurement_request,interior_finishing_management.group_ifm_procurement_manager,1,1,1,1
+access_ifm_procurement_line_manager,ifm.procurement.request.line manager,model_ifm_procurement_request_line,interior_finishing_management.group_ifm_procurement_manager,1,1,1,1
+access_ifm_stock_manager,ifm.stock.item manager,model_ifm_stock_item,interior_finishing_management.group_ifm_warehouse_manager,1,1,1,1
+access_ifm_custody_accountant,ifm.custody accountant,model_ifm_custody,interior_finishing_management.group_ifm_accountant,1,1,1,1
+access_ifm_document_user,ifm.document user,model_ifm_document,base.group_user,1,1,1,1
+access_ifm_change_manager,ifm.change.order manager,model_ifm_change_order,interior_finishing_management.group_ifm_general_manager,1,1,1,1
+access_ifm_supplier_manager,ifm.supplier manager,model_ifm_supplier,interior_finishing_management.group_ifm_procurement_manager,1,1,1,1
