@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="ifm.Dashboard">
+        <div class="ifm_dashboard" t-ref="root">
+            <t t-if="state.data">
+                <div class="ifm_kpi_grid" t-if="state.data.kpis">
+                    <div class="ifm_kpi_card" t-foreach="Object.entries(state.data.kpis)" t-as="kpi" t-key="kpi[0]">
+                        <h5><t t-esc="kpi[0]"/></h5>
+                        <h2><t t-esc="kpi[1]"/></h2>
+                    </div>
+                </div>
+                <div class="ifm_chart_grid">
+                    <div class="ifm_chart_card"><canvas id="progressChart"/></div>
+                    <div class="ifm_chart_card"><canvas id="expensePaymentChart"/></div>
+                    <div class="ifm_chart_card"><canvas id="profitTrendChart"/></div>
+                    <div class="ifm_chart_card"><canvas id="comparisonChart"/></div>
+                    <div class="ifm_chart_card"><canvas id="estimatedActualChart"/></div>
+                    <div class="ifm_chart_card"><canvas id="costBreakdownChart"/></div>
+                    <div class="ifm_chart_card"><canvas id="taskStatusChart"/></div>
+                    <div class="ifm_chart_card"><canvas id="engineerTaskChart"/></div>
+                    <div class="ifm_chart_card"><canvas id="engineerPerformanceChart"/></div>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>
